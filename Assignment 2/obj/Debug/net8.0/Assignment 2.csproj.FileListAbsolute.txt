@@ -1,0 +1,14 @@
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.AssemblyInfoInputs.cache
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.AssemblyInfo.cs
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.csproj.CoreCompileInputs.cache
+C:\DMIT-SD\CPSC1012\Assignment 2\bin\Debug\net8.0\Assignment 2.exe
+C:\DMIT-SD\CPSC1012\Assignment 2\bin\Debug\net8.0\Assignment 2.deps.json
+C:\DMIT-SD\CPSC1012\Assignment 2\bin\Debug\net8.0\Assignment 2.runtimeconfig.json
+C:\DMIT-SD\CPSC1012\Assignment 2\bin\Debug\net8.0\Assignment 2.dll
+C:\DMIT-SD\CPSC1012\Assignment 2\bin\Debug\net8.0\Assignment 2.pdb
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.dll
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\refint\Assignment 2.dll
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.pdb
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\Assignment 2.genruntimeconfig.cache
+C:\DMIT-SD\CPSC1012\Assignment 2\obj\Debug\net8.0\ref\Assignment 2.dll
