@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DMIT-SD\\CPSC1012\\Assign3-2024-Start\\Assign3-2024-RLaw.csproj": {}
+    "D:\\DMIT-SD\\CPSC1012\\CPSC1012Assignments\\Assignment 3\\Assign3-2024-RLaw.csproj": {}
   },
   "projects": {
-    "D:\\DMIT-SD\\CPSC1012\\Assign3-2024-Start\\Assign3-2024-RLaw.csproj": {
+    "D:\\DMIT-SD\\CPSC1012\\CPSC1012Assignments\\Assignment 3\\Assign3-2024-RLaw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DMIT-SD\\CPSC1012\\Assign3-2024-Start\\Assign3-2024-RLaw.csproj",
+        "projectUniqueName": "D:\\DMIT-SD\\CPSC1012\\CPSC1012Assignments\\Assignment 3\\Assign3-2024-RLaw.csproj",
         "projectName": "Assign3-2024-RLaw",
-        "projectPath": "D:\\DMIT-SD\\CPSC1012\\Assign3-2024-Start\\Assign3-2024-RLaw.csproj",
+        "projectPath": "D:\\DMIT-SD\\CPSC1012\\CPSC1012Assignments\\Assignment 3\\Assign3-2024-RLaw.csproj",
         "packagesPath": "C:\\Users\\mattk\\.nuget\\packages\\",
-        "outputPath": "D:\\DMIT-SD\\CPSC1012\\Assign3-2024-Start\\obj\\",
+        "outputPath": "D:\\DMIT-SD\\CPSC1012\\CPSC1012Assignments\\Assignment 3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mattk\\AppData\\Roaming\\NuGet\\NuGet.Config"
