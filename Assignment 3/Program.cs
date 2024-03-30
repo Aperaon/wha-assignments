@@ -58,7 +58,8 @@ bool goAgain = true;
     }
     catch (Exception ex)
     {
-      Console.WriteLine($"{ex.Message}");
+		Console.WriteLine();
+    	Console.WriteLine($"{ex.Message}");
     }
   }
 
@@ -133,12 +134,13 @@ void DisplayMemoryValues(string[] dates, double[] values, int logicalSize)
 {
 	if(logicalSize == 0)
 		throw new Exception($"No Entries loaded. Please load a file to memory or add a value in memory");
+	Array.Sort(dates, values, 0 , logicalSize);
 	Console.WriteLine($"\nCurrent Loaded Entries: {logicalSize}");
 	Console.WriteLine($"   Date     Value");
 	for (int i = 0; i < logicalSize; i++)
 		Console.WriteLine($"{dates[i]}   {values[i]}");
 }
-
+//I am not going to be using this, so it will have a warning about it
 double PromptDoubleBetweenMinMax(string prompt, double min, double max){
 	bool inValidInput = true;
 	double num = 0;
@@ -181,8 +183,9 @@ string PromptDate(string prompt){
 	return date.ToString("MM-dd-yyyy");
 }
 
-double FindHighestValueInMemory(double[] values,string[] dates, int logicalSize){
-
+double FindHighestValueInMemory(double[] values,string[] dates, int logicalSize)
+{
+	//TODO: Replace this code with yours to implement this function.
 	double HighestValue = 0;
 	int dateIndex = 0;
 
@@ -195,29 +198,30 @@ double FindHighestValueInMemory(double[] values,string[] dates, int logicalSize)
 	Console.WriteLine($"");
 	Console.WriteLine($"The highest value in memory is {HighestValue} on the day of {dates[dateIndex]}.");
 	return HighestValue;
-	//TODO: Replace this code with yours to implement this function.
 	
 }
 
 double FindLowestValueInMemory(double[] values,string[] dates, int logicalSize)
 {
-	double MinValue = values.Max();
+	//TODO: Replace this code with yours to implement this function.
+	double LowestValue = values.Max();
 	int dateIndex = 0;
 
 	for (int i = 0; i < logicalSize;i++){
-		if (values[i] < MinValue){
-			MinValue = values[i];
+		if (values[i] < LowestValue){
+			LowestValue = values[i];
 			dateIndex = i;
 		}
 	}
 	Console.WriteLine($"");
-	Console.WriteLine($"The lowest value in memory is {MinValue} on the day of {dates[dateIndex]}.");
-	return logicalSize;
-	//TODO: Replace this code with yours to implement this function.
+	Console.WriteLine($"The lowest value in memory is {LowestValue} on the day of {dates[dateIndex]}.");
+	return LowestValue;
+	
 }
 
 void FindAverageOfValuesInMemory(double[] values, int logicalSize)
 {
+	//TODO: Replace this code with yours to implement this function.
 	double Average = 0.00;
 	double TotalValues = 0.00;
 	for (int i = 0; i < logicalSize;i++){
@@ -226,29 +230,82 @@ void FindAverageOfValuesInMemory(double[] values, int logicalSize)
 	Average = TotalValues/logicalSize ;
 	Console.WriteLine($"");
 	Console.WriteLine($"The average of values in memory is {Average:n2}.");
-	//TODO: Replace this code with yours to implement this function.
+	
 }
 
 void SaveMemoryValuesToFile(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
 	//TODO: Replace this code with yours to implement this function.
+	string FileName = Prompt("Enter file name including .csv or .txt: ");
+	string filePath = $"./data/{FileName}";
+	if (logicalSize == 0){
+		throw new Exception("No entries loaded. Please load a file into memory.");
+	}
+	if (logicalSize > 1){
+		Array.Sort(dates, values, 0, logicalSize);
+	}
+	string[] csvLines = new string[logicalSize + 1];
+	csvLines[0] = "dates,values";
+	for(int i = 1; i <= logicalSize; i++){
+		csvLines[i] = $"{dates[i-1]},{values[i-1].ToString()}";
+	}
+	File.WriteAllLines(filePath,csvLines);
+	Console.WriteLine($"Save Complete. {FileName} has {logicalSize} entries.");
+
 }
 
 int AddMemoryValues(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
-	return logicalSize;
 	//TODO: Replace this code with yours to implement this function.
+	double value = 0.00;
+	string NewDateString = "";
+
+	NewDateString = PromptDate("Enter date in the format of mm-dd-yyyy (ex. 03-24-2023): ");
+	bool Match = false;
+	for (int i = 0; i < logicalSize; i++){
+		if(dates[i].Equals(NewDateString)){
+			Match = true;
+		}
+	}
+	if(Match){
+		throw new Exception($"{NewDateString} is already in memory. Use edit entry instead.");
+	}
+	Console.Write($"Please enter a value in double: ");
+	value = double.Parse(Console.ReadLine());
+	dates[logicalSize] = NewDateString;
+	values[logicalSize] = value;
+	logicalSize++;
+
+	return logicalSize;
 }
 
 void EditMemoryValues(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
 	//TODO: Replace this code with yours to implement this function.
+	double value = 0.00;
+	string NewDateString = "";
+	int FoundIndex = 0;
+
+	if (logicalSize == 0){
+		throw new Exception($"No Entries loaded. Please load a file to memory or add a value in memory.");
+	}
+	NewDateString = PromptDate("Enter date in the format of mm-dd-yyyy (ex. 03-24-2023): ");
+	bool Match = false;
+	for (int i = 0; i < logicalSize; i++){
+		if(dates[i].Equals(NewDateString)){
+			Match = true;
+			FoundIndex = i;
+		}
+	}
+	if(Match == false){
+		throw new Exception($"{NewDateString} is not in memory. Use add entry instead.");
+	}
+	Console.Write($"Please enter a value in double: ");
+	value = double.Parse(Console.ReadLine());
+	values[FoundIndex] = value;
 }
 
-//this will used to round the highest value in the memory and be used for better incredments of the graph
+//this will used to round the highest value in the memory and will be used for better incredments of the graph
 double RoundToNextMagnitude(double number)
 {
 	// If the number is less than 10, round to the next integer
@@ -261,7 +318,7 @@ double RoundToNextMagnitude(double number)
 	return magnitude;
 }
 
-// take the dd out of the whole date
+//take the DD out of the whole date
 string GetDateBetween(string date){
         
 	// Find the index of the first "-" character
@@ -278,16 +335,10 @@ string GetDateBetween(string date){
 
 void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 {
+	//TODO: Replace this code with yours to implement this function.
 	int NumbForIncrement = 20;
 	double Increments = RoundToNextMagnitude(values.Max()) / NumbForIncrement;
 	string[,] Graph = new string[NumbForIncrement + 2,logicalSize + 2];
-
-	int BiggerNumber = 0; 
-	if (logicalSize >= NumbForIncrement){
-		BiggerNumber = logicalSize;
-	}else{
-		BiggerNumber = NumbForIncrement;
-	}
 
 	double GraphNumber = RoundToNextMagnitude(values.Max());
 	//y axis labels
@@ -299,16 +350,27 @@ void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 		Graph[NumbForIncrement +1, i + 1] = GetDateBetween(dates[i]);
 	}
 	//Putting values in correct column
+	Graph[NumbForIncrement,0] = "0";
 	for (int i = 0; i < logicalSize; i++){
-	for (int o = 0; o < NumbForIncrement; o++){
-		//System.Console.WriteLine(Graph[o,0]);
-		if(values[i] >= Convert.ToDouble(Graph[o,0]) && values[i] < Convert.ToDouble(Graph[o-1,0])){
-		Graph[o,i+1] = Convert.ToString(values[i]);
+		bool OneTime = true;
+		for (int o = 0; o < NumbForIncrement; o++){
+			//System.Console.WriteLine(Graph[o,0]);
+			if(values[i] >= Convert.ToDouble(Graph[o,0]) && values[i] < Convert.ToDouble(Graph[o-1,0])){
+				Graph[o,i+1] = Convert.ToString(values[i]);
+			}
+			// this is for if value was too small then it will place value in the bottom. 
+			//I don't know why the first if wouldn't put in if its too small, but this will fix it, so yea...
+			if(values[i] >= Convert.ToDouble(Graph[NumbForIncrement,0]) && values[i] < Convert.ToDouble(Graph[NumbForIncrement-1,0])){
+				if(OneTime){
+					Graph[NumbForIncrement,i+1] = Convert.ToString(values[i]);
+					OneTime = false;
+				}
+			}
+			
 		}
 	}
-	}
+	//displaying Graph 
 	
-	Graph[NumbForIncrement,0] = "0";
 	Graph[NumbForIncrement+1,0] = "Date";
 	System.Console.WriteLine();
 	Console.WriteLine($"{"Values",6}");
@@ -321,5 +383,4 @@ void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 		Console.WriteLine();
 	}
 	
-	//TODO: Replace this code with yours to implement this function.
 }
