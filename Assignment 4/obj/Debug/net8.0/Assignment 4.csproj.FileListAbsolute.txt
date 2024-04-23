@@ -1,0 +1,15 @@
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.GeneratedMSBuildEditorConfig.editorconfig
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.AssemblyInfoInputs.cache
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.AssemblyInfo.cs
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.csproj.CoreCompileInputs.cache
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.sourcelink.json
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\bin\Debug\net8.0\Assignment 4.exe
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\bin\Debug\net8.0\Assignment 4.deps.json
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\bin\Debug\net8.0\Assignment 4.runtimeconfig.json
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\bin\Debug\net8.0\Assignment 4.dll
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\bin\Debug\net8.0\Assignment 4.pdb
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.dll
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\refint\Assignment 4.dll
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.pdb
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\Assignment 4.genruntimeconfig.cache
+D:\DMIT-SD\CPSC1012\CPSC1012Assignments\Assignment 4\obj\Debug\net8.0\ref\Assignment 4.dll
